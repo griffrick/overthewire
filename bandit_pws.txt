@@ -1,0 +1,62 @@
+Passwords:
+b0 -> b1
+	boJ9jbbUNNfktd78OOpsqOltutMc3MY1
+b1 -> b2
+	CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
+b2 -> b3
+	UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
+b3 -> b4
+	pIwrPrtPN36QITSp3EQaw936yaFoFgAB
+b4 -> b5
+	file ./*
+	koReBOKuIDDepwhWk7jZC0RTdopnAYKh
+b5 -> b6
+	find . -type f -size 1033c -name "[[:print:]]*" ! -executable
+	DXjZPULLxYr17uwoI01bNLQbtFemEgo7
+b6 -> b7
+	find / -user bandit7 -group bandit6
+	HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
+b7 -> b8
+	cat data.txt | grep millionth
+	cvX2JJa4CFALtqS87jk27qwqGhBM9plV
+b8 -> b9
+	sort data.txt | uniq -u
+	UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
+b9 -> b10
+	strings data.txt | grep =
+	truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk
+b10 -> b11
+	base64 -d data.txt
+	IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
+b11 -> b12
+	cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m'
+	5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
+b12 -> b13
+	xxd -r data.txt
+	file data, used the correct decompression to get it back.
+	8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL
+b13 -> b14
+	ssh -i sshkey.private bandit14@localhost
+	cat /etc/bandit_pass/bandit14
+	4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e
+b14 -> b15
+	nc localhost 30000
+	BfMYroe26WYalil77FoDi9qh59eK5xNr
+b15 -> b16
+	openssl s_client -ign_eof -connect localhost:30001
+	cluFn7wTiGryunymYOu4RcffSxQluehd
+b16 -> b17
+	nmap -p31000-32000 localhost
+
+	Starting Nmap 6.40 ( http://nmap.org ) at 2016-04-10 05:49 UTC
+	Nmap scan report for localhost (127.0.0.1)
+	Host is up (0.00046s latency).
+	Not shown: 996 closed ports
+	PORT      STATE SERVICE
+	31046/tcp open  unknown
+	31518/tcp open  unknown
+	31691/tcp open  unknown
+	31790/tcp open  unknown
+
+	
+	
